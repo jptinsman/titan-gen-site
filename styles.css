@@ -413,7 +413,7 @@ a { color: var(--gold-deep); }
 .icon.coffee {
   background-image: url("/images/coffee-set-64.png");
   background-repeat: no-repeat;
-  display: inline-block; width: 64px; height: 64px;
+  display: inline-block; width: 58px; height: 58px;
 }
 
 /* Shift the master sheet layout using background-position to reveal individual graphics */
