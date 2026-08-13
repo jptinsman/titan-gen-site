@@ -400,20 +400,20 @@ a { color: var(--gold-deep); }
 .cause-card--retired { border-left-color: var(--steel); opacity: 0.92; }
 
 /* coffee tier ladder */
-.tiers { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.tiers { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 6px; }
 .tier {
   font-family: "JetBrains Mono", monospace; font-size: 12.5px;
   border: 1px solid var(--hair); background: var(--card);
-  padding: 7px 12px; border-radius: 999px; color: var(--ink-soft);
+  padding: 7px 7px; border-radius: 999px; color: var(--ink-soft);
   display: flex; align-items: center; gap: 7px;
 }
 .tier--tree { border-color: var(--gold); color: var(--gold-deep); }
-.tier__arrow { color: var(--steel); }
+.tier__arrow { color: var(--steel); padding-top: 1.5em}
 
 .icon.coffee {
-  background-image: url("/images/coffee-set-64.png");
+  background-image: url("/images/coffee-set.64.png");
   background-repeat: no-repeat;
-  display: inline-block; width: 58px; height: 58px;
+  display: inline-block; width: 64px; height: 64px;
 }
 
 /* Shift the master sheet layout using background-position to reveal individual graphics */
