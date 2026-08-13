@@ -59,8 +59,36 @@ Your privacy-policy URLs for Play Console will be:
 - `https://titan-gen.com/lottery-calculator/`
 - `https://titan-gen.com/rollvert/`
 
+## Where to enter these on Squarespace
+The domain is managed in the **Squarespace Domains dashboard** (this is where
+former Google Domains landed). The same records above go in Squarespace — you do
+not need to move the domain or change nameservers.
+
+1. account.squarespace.com/domains → click **titan-gen.com** → **DNS** →
+   **DNS Settings** → scroll to **Custom Records**.
+2. **Delete Squarespace's default/parking records** that conflict — Squarespace
+   pre-populates placeholder records, and GitHub requires you remove any default
+   apex record before adding yours. Leave MX/email records alone if you use them.
+3. Add the four apex **A** records: Type `A`, Name/Host `@`, Data = each GitHub
+   IP (one record per IP). Optionally add the four **AAAA** records the same way.
+4. Add the **CNAME**: Type `CNAME`, Host `www`, Data `USERNAME.github.io`.
+5. (Recommended) Verify the domain to block takeovers: in GitHub → Settings →
+   Pages → **Verify domains**, copy the `TXT` challenge, and add it in
+   Squarespace as Type `TXT`, Host `_github-pages-challenge-titangen`
+   (Squarespace's host field excludes the domain), Data = the value GitHub gives.
+6. In GitHub → Settings → Pages, set **Custom domain** to `titan-gen.com`
+   (matches the CNAME file here). GitHub auto-creates the www→apex redirect.
+7. Wait for propagation (Squarespace can take up to ~24–72h, usually much less),
+   then tick **Enforce HTTPS**.
+
+Shortcut: Squarespace also supports **ALIAS** records. If you'd rather not manage
+four A records, one ALIAS at Host `@` → `USERNAME.github.io` works and
+auto-tracks GitHub's IPs — but the four A records are the battle-tested path if
+you hit any snag.
+
 ## Alternative: Cloudflare Pages
-If you move your nameservers to Cloudflare (free), Cloudflare flattens CNAMEs at
-the apex, so you skip the four A records. Connect the GitHub repo in the
-Cloudflare Pages dashboard, add `titan-gen.com` as a custom domain, and it wires
-up DNS + HTTPS automatically. Same files, no changes needed.
+If you point the domain's nameservers at Cloudflare (free), Cloudflare flattens
+CNAMEs at the apex so you skip the A records entirely. Connect the GitHub repo in
+the Cloudflare Pages dashboard, add `titan-gen.com`, and it wires up DNS + HTTPS.
+Only worth it if you want Cloudflare's CDN/analytics — the Squarespace path above
+needs nothing extra.

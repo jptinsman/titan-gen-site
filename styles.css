@@ -322,3 +322,117 @@ body {
 
 a { color: var(--gold-deep); }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ============================================================
+   Giving / mission additions
+   ============================================================ */
+
+/* homepage mission strip */
+.mission-strip {
+  background: var(--ink);
+  color: #fff;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  margin-top: 8px;
+}
+.mission-strip__inner {
+  max-width: 1080px; margin: 0 auto; padding: 30px 24px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px;
+}
+.mission-strip__pct {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700; font-size: 2.4rem; letter-spacing: -0.02em;
+  color: var(--gold); line-height: 1;
+}
+.mission-strip__txt { font-size: 1.02rem; color: rgba(255,255,255,0.86); max-width: 46ch; }
+.mission-strip__link {
+  margin-left: auto; font-family: "Space Grotesk", sans-serif; font-weight: 600;
+  color: var(--gold); text-decoration: none; white-space: nowrap;
+}
+.mission-strip__link:hover { text-decoration: underline; }
+.mission-strip__link::after { content: " →"; }
+
+/* cause line on app cards */
+.cause-line {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; color: var(--gold-deep);
+  margin: -8px 0 16px; display: flex; align-items: center; gap: 6px;
+}
+.cause-line b { color: var(--ink-soft); font-weight: 500; }
+
+/* giving page hero */
+.give-hero { padding: 72px 0 40px; }
+.give-hero .hero__eyebrow { color: var(--gold-deep); }
+.pledge {
+  display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
+  margin: 8px 0 20px;
+}
+.pledge__num {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700;
+  font-size: clamp(3.4rem, 12vw, 6rem); line-height: 0.9;
+  letter-spacing: -0.04em; color: var(--ink);
+}
+.pledge__num span { color: var(--gold); }
+.pledge__cap {
+  font-family: "JetBrains Mono", monospace; font-size: 13px; line-height: 1.7;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel); max-width: 22ch;
+}
+
+/* cause grid */
+.causes { display: grid; gap: 18px; }
+@media (min-width: 720px) { .causes { grid-template-columns: 1fr 1fr; } }
+.cause-card {
+  background: var(--card); border: 1px solid var(--hair);
+  border-left: 3px solid var(--gold); border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.cause-card__tag {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-deep); margin: 0 0 6px;
+}
+.cause-card__app {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.2rem;
+  color: var(--ink); margin: 0 0 4px;
+}
+.cause-card__org { font-size: 0.98rem; color: var(--ink-soft); margin: 0 0 8px; }
+.cause-card__org b { color: var(--gold-deep); }
+.cause-card p { font-size: 0.94rem; color: var(--steel); margin: 0; max-width: none; }
+.cause-card--retired { border-left-color: var(--steel); opacity: 0.92; }
+
+/* coffee tier ladder */
+.tiers { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.tier {
+  font-family: "JetBrains Mono", monospace; font-size: 12.5px;
+  border: 1px solid var(--hair); background: var(--card);
+  padding: 7px 12px; border-radius: 999px; color: var(--ink-soft);
+  display: flex; align-items: center; gap: 7px;
+}
+.tier--tree { border-color: var(--gold); color: var(--gold-deep); }
+.tier__arrow { color: var(--steel); }
+
+.icon.coffee {
+  background-image: url("/images/coffee-set.png");
+  background-repeat: no-repeat;
+  display: inline-block; width: 16px; height: 16px;
+}
+
+/* Shift the master sheet layout using background-position to reveal individual graphics */
+.icon.coffee.cup {
+  background-position: 0px 0px; /* Displays the first icon at the top left */
+}
+
+.icon.coffee.pot {
+  background-position: -16px 0px; /* Shifts the image left by 16px to show the second icon */
+}
+
+.icon.coffee.carafe {
+  background-position: -32px 0px; /* Shifts the image left by 32px to show the third icon */
+}
+
+.icon.coffee.tree {
+  background-position: -48px 0px; /* Shifts the image left by 48px to show the fourth icon */
+}
+
+icon.coffee.plantation {
+  background-position: -64px 0px; /* Shifts the image left by 64px to show the fifth icon */
+}
