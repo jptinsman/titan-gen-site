@@ -1,0 +1,7 @@
+# titan-gen.com
+User-agent: *
+Allow: /
+Disallow: /preview/
+
+# If you have a sitemap for the main site, point to it here:
+# Sitemap: https://titan-gen.com/sitemap.xml
