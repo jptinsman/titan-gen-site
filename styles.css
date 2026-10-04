@@ -436,3 +436,25 @@ a { color: var(--gold-deep); }
 .icon.coffee.plantation {
   background-position: -256px 0px; /* Shifts the image left by 256px to show the fifth icon */
 }
+/* ============================================================
+   Custom websites / services
+   ============================================================ */
+.services { display:grid; gap:28px; align-items:start; }
+@media (min-width:760px){ .services{ grid-template-columns:1.3fr 1fr; gap:40px; } }
+.services__lede { font-size:1.08rem; color:var(--ink-soft); margin:0 0 16px; max-width:52ch; }
+.services__work { font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--steel); margin:0 0 22px; }
+.services__work a { color:var(--gold-deep); }
+.services__points { list-style:none; margin:0; padding:22px 24px; background:var(--card); border:1px solid var(--hair); border-left:3px solid var(--gold); border-radius:var(--radius); }
+.services__points li { font-size:0.96rem; color:var(--steel); margin:0 0 12px; }
+.services__points li:last-child { margin-bottom:0; }
+.services__points b { color:var(--ink); font-weight:600; }
+.btn { display:inline-block; font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:0.98rem; color:var(--ink); background:var(--gold); padding:12px 22px; border-radius:8px; text-decoration:none; transition:transform .15s ease, background .15s ease; }
+.btn:hover { background:#e0a52c; transform:translateY(-2px); }
+.btn:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+
+/* logo in brandbar + hero availability */
+.mark-img { height:30px; width:auto; display:block; }
+.hero__avail { margin-top:24px; font-family:"JetBrains Mono",monospace; font-size:13px; letter-spacing:0.02em; color:var(--steel); display:inline-flex; align-items:center; gap:8px; }
+.hero__avail::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 3px rgba(207,148,34,0.18); flex:none; }
+.hero__avail a { color:var(--gold-deep); font-weight:600; text-decoration:none; }
+.hero__avail a:hover { text-decoration:underline; }
